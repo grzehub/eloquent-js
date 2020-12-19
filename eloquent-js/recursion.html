@@ -1,27 +1,33 @@
 <html>
     <script>
+
         function isEven(n) {
+    
+            // if (n < 0) {
+            //     return null;
+            // };
 
-            if (n < 0) {
-                return null;
-            }; 
+            function recursion(n) {
 
-            if (n == 0) {
-                return true;
-            };
+                if (n == 1) {
+                    return console.log(false);
+                }
 
-            if (n == 1) {
-                return false;
-            };
+                if (n == 0) {
+                    return console.log(true); 
+                } 
 
-            function recursion(current) {
-                current = n - 2; 
-                console.log(current);
+                if (n > 0) {
+                    return (recursion(n - 2));
+                }
 
-            };
+            }
+
+            return recursion(n);
+
         }
-
-        console.log(isEven(0));
-
+        
+        isEven(50);
+        
     </script>
 </html>
