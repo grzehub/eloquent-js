@@ -1,5 +1,5 @@
 <html>
-    <script>
+    <!-- <script>
         function isEven(n) {
             function recursion(n) {
                 if (n == 1) {
@@ -9,11 +9,46 @@
                     return true; 
                 } 
                 if (n > 0) {
+                    return recursion(n - 2);
+                }
+            }
+            return recursion(n);
+        }
+    </script> -->
+    <!-- <script>
+        function isEven(n) {
+            function recursion(n) {
+                if (n == 1) {
+                    return console.log(n + " is", false);
+                }
+                if (n == 0) {
+                    return true; 
+                } 
+                if (n > 1) {
                     return (recursion(n - 2));
                 }
             }
             return recursion(n);
         }    
-        console.log(isEven(75));        
+        isEven(50);
+    </script> -->
+    <script>
+        
+            const isEven = (n) => (
+                n == 1 ? true : false,
+                n == 0 ? false : true
+            )   
+            
+            
+            
+        
+    
+
+        // const recursion = (n) => {
+        //         n == 0 || n == 1 ? true : false;
+        //         // n > 0 return recursion(n)
+        //     }
+        
+        
     </script>
 </html>
