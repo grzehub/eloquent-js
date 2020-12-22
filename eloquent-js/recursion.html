@@ -3,10 +3,10 @@
         function isEven(n) {
             function recursion(n) {
                 if (n == 1) {
-                    return console.log(false);
+                    return false;
                 }
                 if (n == 0) {
-                    return console.log(true); 
+                    return true; 
                 } 
                 if (n > 0) {
                     return (recursion(n - 2));
@@ -14,6 +14,6 @@
             }
             return recursion(n);
         }    
-        isEven(50);        
+        console.log(isEven(75));        
     </script>
 </html>
