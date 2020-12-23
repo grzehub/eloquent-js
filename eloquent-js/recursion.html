@@ -1,12 +1,12 @@
 <html>
-    <script>
+    <!-- <script>
         const isEven = n => {            
             while (n > 0) {
                 return isEven(n - 2);
             }
             return n == 0 ? true : false;
         }
-    </script>
+    </script> -->
     <!-- <script>
         function isEven(n) {
             function recursion(n) {
@@ -23,4 +23,21 @@
             return recursion(n);
         }    
     </script> -->
+    <!-- <script>
+        const isEven = n => {
+            function recursion(n) {
+                return n > 0 ? recursion(n - 2) : n == 0 ? true : false;
+            }
+            return recursion(n);
+        }    
+    </script> -->
+    <!-- <script>
+        const isEven = n => {
+            const recursion = n => n > 0 ? recursion(n - 2) : n === 0 ? true : false;
+            return recursion(n);
+        }    
+    </script> -->
+    <script>
+        const isEven = n => n > 0 ? isEven(n - 2) : n === 0 ? true : false;        
+    </script>
 </html>
