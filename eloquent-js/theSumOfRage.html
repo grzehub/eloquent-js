@@ -1,0 +1,35 @@
+<html>
+    <script>        
+        function range(start, end, step) {
+            let rangeNumbers = [], index = 0;
+            rangeNumbers[index] = start;
+
+            function pushing() {
+                rangeNumbers.push(start += step);
+                index++;
+            }
+            
+            if (start > end) {
+                while (start + step >= end) {
+                    pushing();
+                }
+            }
+
+            if (start < end) {
+                while (start + step <= end) {
+                    pushing();
+                }
+            }
+
+            return rangeNumbers;
+        }
+
+        function sum(rangeNumbers) {
+            let result = 0;
+            for (let addition of rangeNumbers) {
+                result += addition; 
+            }
+            return result;
+        }
+    </script>
+</html>
