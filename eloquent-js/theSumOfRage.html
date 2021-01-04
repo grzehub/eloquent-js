@@ -37,9 +37,10 @@
         const range = (start, end, step = 1) => {
             let rangeNumbers = [], index = 0;
             rangeNumbers[index] = start;
-            
+
             while (Math.min(start, end) + Math.abs(step) <= Math.max(start, end)) { 
-                rangeNumbers.push(start += step) && index++;
+                rangeNumbers.push(start += step);
+                index++;
             }
             return rangeNumbers;
         }
