@@ -1,0 +1,36 @@
+<html>
+    <script>        
+        const range = (start, end, step) => {
+            let rangeNumbers = [], index = 0;
+            
+            rangeNumbers[index] = start;
+
+            pushing = () => rangeNumbers.push(start += step), index++;
+            // unshifting = () => rangeNumbers.unshift(start += step), index++;
+
+            toStart = () => {
+                while (start + step >= end) {
+                    pushing();
+                }
+            }
+            
+            toEnd = () => {
+                while (start + step <= end) {
+                    pushing();
+                }
+            }
+
+            (start > end) ? toStart() : toEnd();
+
+            return rangeNumbers;
+        }
+
+        const sum = (rangeNumbers) => {
+            let result = 0;
+            for (let addition of rangeNumbers) {
+                result += addition; 
+            }
+            return result;
+        }
+    </script>
+</html>
