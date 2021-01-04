@@ -1,12 +1,11 @@
 <html>
-    <script>        
-        const range = (start, end, step) => {
+    <!-- <script>        
+        const range = (start, end, step = 1) => {
             let rangeNumbers = [], index = 0;
             
             rangeNumbers[index] = start;
 
-            pushing = () => rangeNumbers.push(start += step), index++;
-            // unshifting = () => rangeNumbers.unshift(start += step), index++;
+            pushing = () => rangeNumbers.push(start += step) && index++;
 
             toStart = () => {
                 while (start + step >= end) {
@@ -22,6 +21,26 @@
 
             (start > end) ? toStart() : toEnd();
 
+            return rangeNumbers;
+        }
+
+        const sum = (rangeNumbers) => {
+            let result = 0;
+            for (let addition of rangeNumbers) {
+                result += addition; 
+            }
+            return result;
+        }
+    </script> -->
+
+    <script>        
+        const range = (start, end, step = 1) => {
+            let rangeNumbers = [], index = 0;
+            rangeNumbers[index] = start;
+            
+            while (Math.min(start, end) + Math.abs(step) <= Math.max(start, end)) { 
+                rangeNumbers.push(start += step) && index++;
+            }
             return rangeNumbers;
         }
 
