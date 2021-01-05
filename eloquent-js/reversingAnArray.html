@@ -10,25 +10,12 @@
         
         const reverseArrayInPlace = (...entryArray) => {
             let entriesAmount = entryArray.length;
-
             for (let i = 1; i < entriesAmount; i++) {
-                entryArray.unshift(entryArray[entriesAmount - i]);
-                console.log(entryArray);
-                entryArray.pop(entryArray[entriesAmount - i]);
-                console.log(entryArray);
-
+                entryArray.push(entryArray[entriesAmount - i - 1]);
             }
-
-            // for (let i = 1; i < entriesAmount; i++) {
-            //     entryArray.push(entryArray[entriesAmount - i - 1]);
-            //     console.log(entryArray);
-
-            // }
-
-            // for (let i = 1; i < entriesAmount; i++) {
-            //     entryArray.shift(entryArray[i]);
-            //     console.log(entryArray);
-            // }
+            for (let i = 1; i < entriesAmount; i++) {
+                entryArray.shift(entryArray[i]);
+            }
             return entryArray;
         }
     </script>
