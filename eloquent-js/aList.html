@@ -1,39 +1,22 @@
 <script>
-    const arrayToList = (...array) => {
-        let [arrayValues] = array;
-        let listItem = {};
-        let listArray = [];
+    const arrayToList = (...someArray) => {
+        let [arrayValues] = someArray;
 
-        listSubItem = {
-            value: arrayValues[1],
-            rest: {}
-        }    
-
-        listItem = { 
-            value: arrayValues[0],
-            rest: listSubItem,
+        for (let j = 0; j < arrayValues.length; j++) {
+            arrayValues[j] = { 
+                value: arrayValues[j], 
+                rest: {} 
+            };
         }
 
-        return listItem;
+        for (let i = 0; i < arrayValues.length; i++) {
+            arrayValues[i].rest = arrayValues[i + 1];
+            i === arrayValues.length - 1 
+            ? arrayValues[i].rest = null 
+            : null;
+        }
 
+        return (arrayValues[0]);
     }
-        // let list = (index) => {
-        //         listItem = {
-        //             value: arrayValues[index],
-        //             rest: {}
-        //         }
-        //     }
-        
-        
-        // let list = {
-        //     value: arrayValues[0],
-        //     rest: {
-        //         value: arrayValues[1],
-        //         rest: {
-        //             value: arrayValues[2],
-        //             rest: null
-        //         }
-        //     }
-        // }
 
 </script>
