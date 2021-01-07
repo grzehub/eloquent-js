@@ -10,13 +10,13 @@
         }
 
         for (let i = 0; i < arrayValues.length; i++) {
-            arrayValues[i].rest = arrayValues[i + 1];
             i === arrayValues.length - 1 
             ? arrayValues[i].rest = null 
+            : i < arrayValues.length 
+            ? arrayValues[i].rest = arrayValues[i + 1] 
             : null;
         }
-
+        
         return (arrayValues[0]);
     }
-
 </script>
