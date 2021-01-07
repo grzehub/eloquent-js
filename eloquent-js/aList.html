@@ -1,0 +1,39 @@
+<script>
+    const arrayToList = (...array) => {
+        let [arrayValues] = array;
+        let listItem = {};
+        let listArray = [];
+
+        listSubItem = {
+            value: arrayValues[1],
+            rest: {}
+        }    
+
+        listItem = { 
+            value: arrayValues[0],
+            rest: listSubItem,
+        }
+
+        return listItem;
+
+    }
+        // let list = (index) => {
+        //         listItem = {
+        //             value: arrayValues[index],
+        //             rest: {}
+        //         }
+        //     }
+        
+        
+        // let list = {
+        //     value: arrayValues[0],
+        //     rest: {
+        //         value: arrayValues[1],
+        //         rest: {
+        //             value: arrayValues[2],
+        //             rest: null
+        //         }
+        //     }
+        // }
+
+</script>
