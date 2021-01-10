@@ -16,7 +16,30 @@
             ? arrayValues[i].rest = arrayValues[i + 1] 
             : null;
         }
+
+        let listFromArray = arrayValues[0];
+
+        return (listFromArray);
+    }
+    
+    const listToArray = (...someList) => {
+        console.log(...someList);
+        let arrayFromList = someList;
+        let i = 0;
+
+        while (arrayFromList[i].rest) {
+            arrayFromList.push(arrayFromList[i].rest);
+            i++
+        }
+
+        // for (let j = 0; j < arrayFromList.length; j++) {
+        //     arrayFromList[j] = arrayFromList[j].value;
+        // }
         
-        return (arrayValues[0]);
+        return arrayFromList;
+    }
+
+    const prepend = ( element, list ) => {
+        
     }
 </script>
