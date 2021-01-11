@@ -23,7 +23,6 @@
     }
     
     const listToArray = (...someList) => {
-        console.log(...someList);
         let arrayFromList = someList;
         let i = 0;
 
@@ -31,15 +30,29 @@
             arrayFromList.push(arrayFromList[i].rest);
             i++
         }
-
-        // for (let j = 0; j < arrayFromList.length; j++) {
-        //     arrayFromList[j] = arrayFromList[j].value;
-        // }
         
         return arrayFromList;
     }
 
-    const prepend = ( element, list ) => {
+    const prepend = (element, ...someList) => {
+        let prependedArray = listToArray(...someList);        
+        prependedArray.unshift(element);
+
+        for (let i = 1; i < prependedArray.length; i++) {
+            prependedArray[i] = prependedArray[i].value;
+        }
+
+        let prependedList = arrayToList(prependedArray);
         
+        return prependedList;
     }
+
+    const nth = (number, ...someList) => {
+        let nthCheckArray = listToArray(...someList); 
+        let nth = number > listToArray.length - 1 && number < 0 
+        ? undefined 
+        : nthCheckArray[number];
+        return nth;
+    }
+
 </script>
