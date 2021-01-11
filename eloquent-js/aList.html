@@ -18,8 +18,7 @@
         }
 
         let listFromArray = arrayValues[0];
-
-        return (listFromArray);
+        return listFromArray;
     }
     
     const listToArray = (...someList) => {
@@ -28,7 +27,7 @@
 
         while (arrayFromList[i].rest) {
             arrayFromList.push(arrayFromList[i].rest);
-            i++
+            i++;
         }
         
         return arrayFromList;
@@ -42,8 +41,7 @@
             prependedArray[i] = prependedArray[i].value;
         }
 
-        let prependedList = arrayToList(prependedArray);
-        
+        let prependedList = arrayToList(prependedArray);      
         return prependedList;
     }
 
