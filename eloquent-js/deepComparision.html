@@ -1,11 +1,36 @@
 <script>
     const deepEqual = (valueOne, valueTwo) => {
+        console.log(typeof(valueOne));
+        console.log(typeof(valueTwo));
+        console.log(Object.keys(valueOne));
+        let one = Object.keys(valueOne);
+
+        console.log(typeof(one[0]));
+
+        return typeof(valueOne) !== 'object' ? valueOne === valueTwo ? true : false 
+        : typeof(valueOne) === 'object' && typeof(valueTwo) === 'object' ?
+        true
+        : false;
+
+
+
         
-        return typeof(valueOne) === 'object' && typeof(valueTwo) === 'object' 
-        ? true 
-        : false
+        // let result = typeof(valueOne) === 'object' 
+        // && typeof(valueTwo) === 'object' 
+        //     ? Object.keys(valueOne) === Object.keys(valueTwo) 
+        //         ? valueOne === valueTwo 
+        //         ? true 
+        //         : false 
+        //     : false
+        // : valueOne === valueTwo 
+        // ? true
+        // : false
         
-        // return valueOne === valueTwo ? true : false;
-        
+        // return compareValues();
+
+        // typeof(valueOne) === 'object' && typeof(valueTwo) === 'object' 
+        // ? valueOne === valueTwo ? true : false  
+
+
     }
 </script>
