@@ -1,76 +1,30 @@
 <script>
     const deepEqual = (valueOne, valueTwo) => {
-        console.log(typeof(valueOne));
-        console.log(typeof(valueTwo));
-        // console.log(Object.keys(valueOne));
-        // console.log(Object.keys(valueTwo));
-        // console.log(Object.entries(valueOne));
-        // console.log(Object.entries(valueTwo));
 
-        let nonObjects = (valueOne, valueTwo) => {
-            return valueOne === valueTwo ? true : false;
+        let compareProperties = (i) => {
+            let propsOne = Object.keys(valueOne);
+            let propsTwo = Object.keys(valueTwo);
+            return propsOne[i] !== propsTwo[i] ? false : compareValues(i)  
         }
-        
-        let areObjects = (valueOne, valueTwo) => {
-            
-            let objectOne = () => {
-                for (entry of Object.keys(valueOne)) {
-                    [valueOne] = entry;
-                    [valueTwo] = Object.keys(valueTwo);
-                    return nonObjects(valueOne, valueTwo);
-                } 
-            }
-           
-            let objectTwo = () => {
-                for (entry of Object.keys(valueOne)) {
-                    [valueOne] = Object.keys(valueOne)
-                    [valueTwo] = Object.keys(entry);
-                    return nonObjects(valueOne, valueTwo);
-                } 
-            }
 
-            return objectOne() ? objectTwo() ? true : false : false;
+        let compareValues = (i) => {
+            let valuesOne = Object.values(valueOne);
+            let valuesTwo = Object.values(valueTwo);
+            return ( 
+                deepEqual(valuesOne[i], valuesTwo[i]) 
+                    ? i <= valuesOne.length 
+                        ? compareProperties(i + 1) 
+                        : true 
+                    : false
+            )
+        }  
 
-            // // for (entry of Object.keys(valueTwo)) {
-            // //     console.log(entry);
-            // // }
-            // [valueOne] = Object.keys(valueOne);
-            // [valueTwo] = Object.keys(valueTwo);     
-        }
-        
-        return typeof(valueOne) !== 'object' ? nonObjects(valueOne, valueTwo) 
-        : typeof(valueOne) === 'object' && typeof(valueTwo) === 'object' && (valueTwo || valueTwo) !== null ?
-        areObjects(valueOne, valueTwo) : null;
-
-
-        
-        // typeof(valueOne) !== 'object' 
-        // ? valueOne === valueTwo 
-        // ? true : false 
-        // : typeof(valueOne) === 'object' && typeof(valueTwo) === 'object' 
-        // ? Object.entries(valueOne) === Object.entries(valueTwo) 
-        // ? true : false
-        // : false 
-        // )
-
-
-        
-        // let result = typeof(valueOne) === 'object' 
-        // && typeof(valueTwo) === 'object' 
-        //     ? Object.keys(valueOne) === Object.keys(valueTwo) 
-        //         ? valueOne === valueTwo 
-        //         ? true 
-        //         : false 
-        //     : false
-        // : valueOne === valueTwo 
-        // ? true
-        // : false
-        
-        // return compareValues();
-
-        // typeof(valueOne) === 'object' && typeof(valueTwo) === 'object' 
-        // ? valueOne === valueTwo ? true : false  
-
-
+        return ( 
+            valueOne === valueTwo 
+                ? true 
+                : typeof(valueOne) === 'object' && typeof(valueTwo) === 'object' && (valueTwo || valueTwo) !== null 
+                    ? compareProperties(i = 0)
+                    : false
+        )
     }
 </script>
