@@ -1,0 +1,10 @@
+<script>
+    const loop = (value, test, body, update) => {
+        while (test()) {
+            body();
+            update();
+        }
+    }
+    loop(value = -100, () => value <= 100, () => console.log(value), () => value += 10);
+</script>
+
