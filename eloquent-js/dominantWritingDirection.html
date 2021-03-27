@@ -1143,9 +1143,13 @@ const dominantDirection = (someString) => {
   let direction = countBy(someString, char => {
     let script = characterScript(char.codePointAt(0))
     return script ? script.direction : null;
-  }).filter(({name}) => name != null);
+  }).filter(({name}) => name != null)
 
-  return direction;
+  return direction.reduce((a, b) => {
+    return a.count === b.count ? 'equal':
+    a.count > b.count ? a : b
+  })
+
 }
 
 // let string = "I'm string 😀 أنا سلسلة";
